@@ -1,0 +1,47 @@
+{
+  "name": "storybook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhercb/storybook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rhercb/storybook/issues"
+  },
+  "homepage": "https://github.com/rhercb/storybook#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@storybook/addon-a11y": "^6.4.21",
+    "@storybook/addon-actions": "^6.4.20",
+    "@storybook/addon-essentials": "^6.4.20",
+    "@storybook/addon-links": "^6.4.20",
+    "@storybook/builder-webpack5": "^6.5.0-alpha.60",
+    "@storybook/html": "^6.4.20",
+    "@storybook/manager-webpack5": "^6.5.0-alpha.60",
+    "babel-loader": "^8.2.4",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "node-sass": "^7.0.1",
+    "postcss": "^8.4.12",
+    "postcss-loader": "^6.2.1",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.72.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}

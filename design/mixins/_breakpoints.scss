@@ -1,0 +1,37 @@
+@import '../overrides/variables';
+
+@mixin screen-xs {
+    @media (max-width: map-get($grid-breakpoints, 'sm') - 1px) {
+        @content;
+    }
+}
+
+@mixin screen-sm {
+    @media (min-width: map-get($grid-breakpoints, 'sm')) {
+        @content;
+    }
+}
+
+@mixin screen-md {
+    @media (min-width: map-get($grid-breakpoints, 'md')) {
+        @content;
+    }
+}
+
+@mixin screen-lg {
+    @media (min-width: map-get($grid-breakpoints, 'lg')) {
+        @content;
+    }
+}
+
+@mixin screen-xl {
+    @media (min-width: map-get($grid-breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+@mixin screen-xxl {
+    @media (min-width: map-get($grid-breakpoints, 'xxl')) {
+        @content;
+    }
+}

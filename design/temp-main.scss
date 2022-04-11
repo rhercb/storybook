@@ -1,0 +1,24 @@
+// Custom variables priekš BS
+@import './overrides/variables';
+// Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../../../node_modules/bootstrap/scss/functions";
+// Required BS files
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+// Bootstrap utilities
+@import "../../../node_modules/bootstrap/scss/utilities/";
+// Include any optional Bootstrap components as you like
+@import "../../../node_modules/bootstrap/scss/buttons";
+@import "../../../node_modules/bootstrap/scss/input-group";
+@import "../../../node_modules/bootstrap/scss/custom-forms";
+// My styles
+@import './overrides/components/buttons';
+@import './overrides/components/inputs';
+@import './overrides/components/custom-control';
+@import './overrides/components/custom-checkbox';
+@import './overrides/components/custom-radio';
+@import './icons/style.scss';
+@import './logo/logo';
+@import './logo/main-logo';
+@import './logo/badges';
+@import './footer/footer';

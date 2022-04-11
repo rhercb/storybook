@@ -1,0 +1,368 @@
+@import '../functions/functions';
+@import './keyframes';
+
+.main-sidebar {
+    ul, li {
+        list-style: none;
+        padding: unset;
+        margin: unset;
+    }
+
+    float: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    max-width: rems(250);
+    min-width: rems(250);
+    background-color: color('gray-black');
+    padding: rems(10) rems(8);
+    transition: all $transition-speed ease;
+    margin-left: rems(-250);
+    z-index: 1037;
+
+    @include media-breakpoint-up(md) {
+        margin-left: unset;
+    }
+
+    &__header {
+        margin-bottom: rems(16);
+        display: flex;
+        justify-content: center;
+        padding: rems(8) 0 rems(18) 0;
+
+        a {
+            display: flex;
+        }
+
+        &-logo {
+            min-height: rems(24);
+            transition: background $transition-speed ease;
+        }
+    }
+
+    &__nav {
+        &-list {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .nav-item {
+            position: relative;
+            margin-bottom: rems(4);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    
+        .nav-link {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: rems(10) rems(8) rems(10) rems(10);
+            color: theme-color('gray-700');
+            border-radius: 8px;
+
+            &.dt-icon-circle-full {
+                &:before {
+                    color: theme-color('primary');
+                }
+            }
+
+            &::before {
+                position: absolute;
+                border-radius: 50%;
+                font-size: rems(14);
+                right: rems(5);
+                top: rems(5);
+                z-index: 2;
+                background-color: color('gray-black');
+                color: theme-color('gray-100');
+                animation-name: fadeOut;
+                animation-duration: $transition-speed;
+                animation-fill-mode: both;
+            }
+    
+            p {
+                margin-bottom: 0;
+                margin-left: rems(8);
+                transition: margin-left $transition-speed ease, opacity $transition-speed ease,visibility $transition-speed ease;
+            }
+    
+            [class^='dt-icon-'] {
+                font-size: rems(24);
+    
+                &:before {
+                    color: theme-color('gray-700');
+                }
+            }
+    
+            .dt-icon-arrow-down-1 {
+                transition: margin-left $transition-speed ease, opacity $transition-speed ease,visibility $transition-speed ease, transform $transition-speed ease;
+                transform: rotate(0deg);
+                margin-left: auto;
+            }
+    
+            .nav-link-addon {
+                margin-left: auto;
+                font-weight: $font-weight-600;
+                background-color: theme-color('primary');
+                color: theme-color('gray-100');
+                font-size: rems(14);
+                padding: rems(3);
+                border-radius: 2px;
+                display: flex;
+                font-style: normal;
+
+                span {
+                    line-height: rems(16);
+                }
+
+                &::before {
+                    color: theme-color('gray-100');
+                    font-size: rems(12);
+                }
+
+                .dt-icon-circle-full {
+                    display: none;
+                }
+            }
+    
+            &[aria-expanded='true'] {
+                color: theme-color('gray-100');
+                background-color: theme-color('primary');
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                font-weight: $font-weight-600;
+    
+                [class^='dt-icon-'] {    
+                    &:before {
+                        color: theme-color('gray-100');
+                    }
+                }
+    
+                .dt-icon-arrow-down-1 {
+                    transform: rotate(180deg);
+                }
+            }
+    
+            &:hover:not(.active):not([aria-expanded='true']) {
+                color: theme-color('gray-100');
+                background-color: theme-color('gray');
+    
+                [class^='dt-icon-'] {    
+                    &:before {
+                        color: theme-color('gray-100');
+                    }
+                }
+            }
+    
+            &.active {
+                color: theme-color('gray-100');
+
+                [class^='dt-icon-'] {    
+                    &:before {
+                        color: theme-color('gray-100');
+                    }
+                }
+
+                .nav-link-addon {
+                    background-color: color('white');
+                    color: theme-color('gray');
+
+                    &::before {
+                        color: theme-color('gray');
+                    }
+                }
+
+                p {
+                    font-weight: $font-weight-600;
+                }
+            }
+        }
+
+        &-sublist {
+            &.show,
+            &.collapsing {
+                background-color: theme-color('gray');
+            }
+    
+            .nav-link {
+                border-radius: 0;
+                color: theme-color('gray-500');
+                [class^='dt-icon-'] {    
+                    &:before {
+                        color: theme-color('gray-500');
+                    }
+                }
+
+                .dt-icon-circle-submenu {
+                    &::before {
+                        content: "\E994";
+                    }
+                }
+
+                &.active {
+                    background-color: theme-color('gray-100');
+                    color: theme-color('gray');
+                    font-weight: $font-weight-600;
+
+                    [class^='dt-icon-'] {    
+                        &:before {
+                            color: theme-color('gray');
+                        }
+                    }
+
+                    .dt-icon-circle-submenu {
+                        &::before {
+                            content: "\E995";
+                        }
+                    }
+                }
+
+                &:hover:not(.active):not([aria-expanded='true']) {
+                    background-color: theme-color('gray-900');
+
+                    .dt-icon-circle-submenu {
+                        &::before {
+                            content: "\E995";
+                            color: theme-color('gray-500');
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.collapsed {
+        margin-left: 0;
+
+        + .main-sidebar-overflow {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1037;
+            transition: all $transition-speed ease;
+        }
+
+        @include media-breakpoint-up(md) {
+            max-width: rems(60);
+            min-width: rems(60);
+
+            + .main-sidebar-overflow {
+                display: none;
+            }
+
+            .nav-link {
+                padding: rems(10);
+                p, 
+                .dt-icon-arrow-down-1 {
+                    animation-name: fadeOut;
+                    animation-duration: $transition-speed;
+                    animation-fill-mode: both;
+                }
+    
+                &:not(.active) {
+                    .nav-link-addon {
+                        background-color: color('gray-black');
+                    }
+
+                    .dt-icon-circle-full::before {
+                        color: theme-color('primary')
+                    }
+                }
+
+                &.active { 
+                    .nav-link-addon,
+                    .nav-link-addon::before,
+                    .dt-icon-circle-full::before {
+                        background-color: color('gray-black');
+                        color: theme-color('gray-100');
+                    }
+                }
+
+                .nav-link-addon {
+                    position: absolute;
+                    top: rems(5);
+                    right: rems(5);
+                    border-radius: 50%;
+                    padding: rems(2);
+    
+                    &:before,
+                    .dt-icon-circle-full:before {
+                        font-size: rems(14);
+                    }
+    
+                    .dt-icon-circle-full {
+                        display: flex;
+                    }
+    
+                    span {
+                        display: none;
+                    }
+                }
+            }
+
+            &:not(:hover) {
+                .main-sidebar__header-logo {
+                    background-image: url('../../../assets/logo/Logo-Symbol.svg');
+                }
+            }
+        }
+
+        z-index: 1038;
+
+        &:hover {
+            max-width: rems(250);
+            min-width: rems(250);
+
+            .nav-link {    
+                padding: rems(10) rems(8) rems(10) rems(10);            
+                p, 
+                .dt-icon-arrow-down-1 {
+                    animation-name: fadeIn;
+                    animation-duration: $transition-speed;
+                    animation-fill-mode: both;
+                }
+
+                .nav-link-addon {
+                    position: unset;
+                    margin-left: auto;
+                    background-color: theme-color('primary');
+                    color: theme-color('gray-100');
+                    font-size: rems(14);
+                    padding: rems(3);
+                    border-radius: 2px;
+                    display: flex;
+                    font-style: normal;
+    
+                    &::before {
+                        color: theme-color('gray-100');
+                        font-size: rems(12);
+                    }
+    
+                    .dt-icon-circle-full {
+                        display: none;
+                    }
+
+                    span {
+                        display: block;
+                    }
+                }
+
+                &.active {
+                    .nav-link-addon {
+                        background-color: color('white');
+                        color: theme-color('gray');
+    
+                        &::before {
+                            background-color: color('white');
+                            color: theme-color('gray');
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

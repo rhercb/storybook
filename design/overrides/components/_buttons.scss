@@ -1,0 +1,237 @@
+@import '../../functions/functions';
+
+.btn {
+    border-radius: rems(3);
+    display: inline-flex;
+    align-items: center;
+    line-height: rems(16);
+    font-weight: $font-weight-600;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    text-transform: uppercase;
+
+    [class^='dt-logo-'],
+    [class*=' dt-logo-'] {
+        margin-right: rems(4);
+    }
+
+    &-md {
+        font-size: rems(14);
+        padding: rems(11) rems(16);
+        min-height: rems(40);
+
+        [class^='dt-logo-'],
+        [class*=' dt-logo-'] {
+            min-width: rems(24);
+            min-height: rems(24);
+        }
+
+        &.btn-logo {
+            padding: rems(8) rems(16) rems(8) rems(8);
+        }
+    }
+
+    &-sm {
+        padding: rems(5) rems(16);
+        font-size: rems(13);
+        min-height: rems(28);
+
+        [class^='dt-logo-'],
+        [class*=' dt-logo-'] {
+            min-width: rems(20);
+            min-height: rems(20);
+        }
+
+        &.btn-logo {
+            padding: rems(4) rems(16) rems(4) rems(8);
+        }
+    }
+
+    &-lg {
+        padding: rems(13) rems(32);
+        font-size: rems(20);
+        line-height: rems(20);
+        min-height: rems(48);
+
+        [class^='dt-logo-'],
+        [class*=' dt-logo-'] {
+            min-width: rems(32);
+            min-height: rems(32);
+        }
+
+        &.btn-logo {
+            padding: rems(8) rems(32) rems(8) rems(24);
+        }
+    }
+
+    &-primary {
+        border-color: #43762b;
+        color: color('white');
+        &:hover:not(:active):not(:disabled):not(.disabled) {
+            background-color: color('button-hover');
+            border-color: #43762B;
+        }
+
+        &:not(:disabled):not(.disabled) {
+            &:active {
+                border-color: rgba(51, 60, 67, 0.3);
+                background-color: theme-color('primary');
+            }
+        }
+
+        &:focus {
+            background-color: color('button-primary');
+
+            &:hover {
+                border-color: #43762B;
+            }
+        }
+
+        &:disabled,
+        &.disabled {
+            background-color: theme-color('gray-400');
+            color: theme-color('gray-700');
+            border-color: theme-color('gray-700');
+        }
+    }
+
+    &-secondary {
+        color: theme-color('gray-900');
+        background-color: color('white');
+        border-color: theme-color('gray-500');
+
+        &:hover:not(:active):not(:disabled):not(.disabled) {
+            background-color: theme-color('gray-100');
+            border-color: theme-color('gray-500');
+            color: theme-color('gray-900');
+        }
+
+        &:not(:disabled):not(.disabled) {
+            &:active {
+                background-color: color('white');
+                border-color: theme-color('gray-500');
+            }
+        }
+
+        &:focus {
+            background-color: color('white');
+
+            &:hover {
+                border-color: theme-color('gray-500');
+            }
+        }
+    }
+
+    &-danger {
+        color: color('white');
+        background-color: color('bordo');
+        border-color: #9c3433;
+
+        &:hover:not(:active):not(:disabled):not(.disabled) {
+            background-color: color('bordo-hover');
+            border-color: #9c3433;
+        }
+        
+        &:not(:disabled):not(.disabled) {
+            &:active {
+                background-color: color('bordo');
+                border-color: #9c3433;
+            }
+        }
+
+        &:focus {
+            background-color: color('bordo');
+
+            &:hover {
+                border-color: #9c3433;
+            }
+        }
+    }
+
+    &-secondary,
+    &-danger {
+        &:disabled,
+        &.disabled {
+            background-color: theme-color('gray-100');
+            border-color: theme-color('gray-700');
+            color: theme-color('gray-600');
+        }
+    }
+
+    &-outline {
+        &-primary {
+            color: color('white');
+            border-color: color('white');
+
+            &:not(:disabled):not(.disabled) {
+                &:active {
+                    background-color: theme-color('primary');
+                    border-color: color('white');
+                    border-width: 1px;
+                }
+            }
+
+            &:hover:not(:active):not(:disabled):not(.disabled) {
+                color: theme-color('gray-900');
+                border-color: color('white');
+                background-color: color('white');
+            }
+
+            &:disabled,
+            &.disabled {
+                background-color: theme-color('gray-400');
+                color: theme-color('gray-700');
+                border-color: theme-color('gray-700');
+            }
+        }
+
+        &-secondary,
+        &-danger {
+            &:disabled,
+            &.disabled {
+                background-color: theme-color('gray-100');
+                border-color: theme-color('gray-700');
+                color: theme-color('gray-600');
+            }
+        }
+    }
+
+    &:not(:disabled):not(.disabled) {
+        &:active,
+        &.active {
+            box-shadow: none;
+            outline: none;
+
+            &:focus {
+                box-shadow: none;
+                outline: none;
+            }
+        }
+    }
+
+    &:disabled,
+    &.disabled {
+        opacity: 1;
+        cursor: not-allowed;
+
+        [class^='dt-logo-'],
+        [class*=' dt-logo-'] {
+            opacity: .5;
+        }
+    }
+
+    &:focus {
+        box-shadow: 0px 0px 0px 1px color('gray-black') inset;
+        border-color: color('gray-black');
+
+        &:hover {
+            box-shadow: unset;
+        }
+
+        &:active,
+        &.active {
+            border-color: inherit;
+        }
+    }
+}

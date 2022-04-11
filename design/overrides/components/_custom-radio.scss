@@ -1,0 +1,15 @@
+@import '../../functions/functions';
+
+.custom-radio {
+    .custom-control-input {
+        &:checked {
+            ~ .custom-control-label::before {
+                border-color: #43762B;
+            }
+
+            ~ .custom-control-label::after {
+                content: '\e995';
+            }
+        }
+    }
+}

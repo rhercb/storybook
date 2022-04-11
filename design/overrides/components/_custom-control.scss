@@ -1,0 +1,201 @@
+@import '../../functions/functions';
+
+input[type="checkbox"], input[type="checkbox"] + label,
+input[type="radio"], input[type="radio"] + label {
+    cursor: pointer;
+}
+
+.custom-control {
+    padding-left: rems(20);
+
+    .form-text {
+        margin-top: 0;
+        margin-left: rems(8);
+        color: theme-color('gray-800') !important;
+
+        &.invalid-feedback {
+            color: color('bordo-hover') !important;
+        }
+    }
+
+    .custom-control-label {
+        margin-left: 0;
+        padding-left: rems(8);
+        font-size: rems(16);
+        line-height: rems(20);
+        font-weight: $font-weight-normal;
+        color: theme-color('gray');
+
+        [class^='dt-icon-'],
+        [class*=' dt-icon-'] {
+            position: absolute;
+            margin-right: rems(4);
+            font-size: rems(18);
+            top: 1px;
+            position: absolute;
+            left: calc(100% + 4px);
+
+            &::before {
+                color: theme-color('gray-700');
+            }
+        }
+
+        &::before {
+            border-color: theme-color('gray-500');
+        }
+
+        &::before,
+        &::after {
+            width: rems(20);
+            height: rems(20);
+            left: rems(-20);
+            top: 0;
+        }        
+    }
+
+    .custom-control-input {
+        width: rems(20);
+        height: rems(20);
+
+        &.is-invalid {
+            ~ .custom-control-label {
+                color: theme-color('gray');
+                &::before {
+                    border-color: color('bordo');
+                    background-color: theme-color('red-10');
+                }
+            }
+
+            &:checked,
+            &:indeterminate {
+                ~ .custom-control-label {
+                    &::before {
+                        border-color: #43762B;;
+                        background-color: color('button-primary');
+                    }
+                }
+
+                &:not(:disabled):hover {
+                    ~ .custom-control-label {
+                        &::before {
+                            border-color: #43762B;
+                            background-color: color('button-hover');
+                        }
+                    }
+                }
+            }
+        }
+
+        &:focus {
+            ~ .custom-control-label {
+                &::before {
+                    border-width: 1px;
+                    border-color: color('gray-black') !important;
+                    box-shadow: unset;
+                }
+            }
+        }
+
+        &:disabled,
+        &:disabled:checked,
+        &:disabled:indeterminate {
+            ~ .custom-control-label {
+                color: theme-color('gray-700');
+                &::before {
+                    border-color: theme-color('gray-700');
+                    background-color: theme-color('gray-300');
+                }
+
+                &::after {
+                    color: theme-color('gray-700');
+                }
+            }
+
+            ~ .form-text {
+                color: theme-color('gray-700') !important;
+            }
+        }
+
+        &:checked,
+        &:indeterminate {
+            ~ .custom-control-label::after {
+                background-image: none;
+                font-family: 'desktime' !important;
+                speak: never;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                font-size: rems(16);
+                padding: rems(2);
+                color: color('white');
+            }
+
+            ~ .custom-control-label {
+                &::before {
+                    border-color:#43762B;
+                }
+            }
+        }
+
+        &:hover:not(:disabled):not(:checked):not(:indeterminate):not(.is-invalid) {
+            ~ .custom-control-label {
+                &::before {
+                    border-color: theme-color('gray-500');
+                    background-color: theme-color('gray-100');
+                }
+            }
+        }
+
+        &:hover:not(:disabled) {
+            &:checked,
+            &:indeterminate {
+                ~ .custom-control-label {
+                    &::before {
+                        border-color: #43762B;
+                        background-color: color('button-hover');
+                    }
+                }
+            }
+
+            &.is-invalid {
+                ~ .custom-control-label {
+                    &::before {
+                        border-color: color('bordo-hover');
+                        background-color: theme-color('red-20');
+                    }
+                }
+            }
+        }
+
+        &:active:not(:disabled):not(:focus) {
+            ~ .custom-control-label {
+                &::before {
+                    border-color: theme-color('gray-500');
+                    background-color: color('white');
+                    border-width: 1px;
+                }
+            }
+            
+            &:checked,
+            &:indeterminate {
+                ~ .custom-control-label {
+                    &::before {
+                        border-color: #43762B;
+                        background-color: color('button-primary');
+                    }
+                }
+            }
+
+            &.is-invalid {
+                ~ .custom-control-label {
+                    &::before {
+                        border-color: color('bordo');
+                        background-color: theme-color('red-10');
+                    }
+                }
+            }
+        }
+    }
+}

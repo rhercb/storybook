@@ -1,0 +1,131 @@
+//----------------------
+// FONT
+//----------------------
+
+$font-family-sans-serif: 'Source Sans Pro', sans-serif;
+$base-font-size: 16;
+
+//----------------------
+// COLORS
+//----------------------
+
+$theme-colors: (
+    // Overrides
+    "primary": #4EA819,
+    "secondary": #FFFFFF,
+    "danger": #D9534F,
+    // New
+    "green": #5FB92A,
+    "green-10": #EFF8EA,
+    "green-20": #DFF1D4,
+    "green-30": #CFEABF,
+    "green-40": #BFE3AA,
+    "green-50": #BFE3AA,
+    "green-60": #9FD57F,
+    "green-70": #8FCE6A,
+    "green-80": #7FC755,
+    "green-90": #6FC03F,
+    "red": #FF4000,
+    "red-10": #FFECE6,
+    "red-20": #FFD9CC,
+    "red-30": #FFC6B3,
+    "red-40": #FFB299,
+    "red-50": #FF9F80,
+    "red-60": #FF8C66,
+    "red-70": #FF794D,
+    "red-80": #FF6633,
+    "red-90": #FF531A,
+    "gray": #333C43,
+    "gray-100": #F5F5F6,
+    "gray-200": #EBECEC,
+    "gray-300": #D6D8D9,
+    "gray-400": #C2C5C7,
+    "gray-500": #999DA1,
+    "gray-600": #858A8E,
+    "gray-700": #70777B,
+    "gray-800": #5C6369,
+    "gray-900": #475056,
+
+    // From colors
+    // Overrides
+    "blue": #2693F8,
+    // New
+    "bordo": #D9534F,
+    "bordo-hover": #C9302C,
+    "button-primary": #4EA819,
+    "button-hover": #4A8F21,
+    "white": #FFFFFF,
+    "gray-black": #262C30,
+);
+
+$colors: (
+    // Overrides
+    "blue": #2693F8,
+    // New
+    "bordo": #D9534F,
+    "bordo-hover": #C9302C,
+    "button-primary": #4EA819,
+    "button-hover": #4A8F21,
+    "white": #FFFFFF,
+    "gray-black": #262C30,
+);
+
+//----------------------
+// FONT WEIGHT
+//----------------------
+
+$font-weight-600: 600;
+
+//----------------------
+// BREAKPOINTS
+//----------------------
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1360px
+);
+
+//----------------------
+// TRANSITIONS
+//----------------------
+
+$transition-speed: .3s !default;
+$transition-fn: ease-in-out !default;
+
+//----------------------
+// ICONS
+//----------------------
+
+$dt-icon-default-color: theme-color('gray-700');
+$dt-icon-hover-color: theme-color('gray-900');
+$dt-icon-disabled-color: theme-color('gray-400');
+
+//----------------------
+// SPACING
+//----------------------
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+    (
+      0: 0,
+      1: ($spacer * .125), // 2px
+      2: ($spacer * .25), // 4px
+      3: ($spacer * .5), // 8px
+      4: ($spacer * .625), // 10px
+      5: ($spacer * .75), // 12px
+      6: $spacer, // 16px
+      7: ($spacer * 1.25), // 20px
+      8: ($spacer * 1.5), // 24px
+      9: ($spacer * 2), // 32px
+      10: ($spacer * 2.5), // 40px
+      11: ($spacer * 3), //  48px
+      12: ($spacer * 3.5), //  48px
+      13: ($spacer * 4), //  48px
+    ),
+    $spacers
+);

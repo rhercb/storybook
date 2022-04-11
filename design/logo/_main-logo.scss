@@ -1,0 +1,35 @@
+@import '../functions/functions';
+
+.dt-logo {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-width: rems(130);
+    min-height: rems(32);
+    background-image: url('../../../assets/logo/Logo-Dark-Text-Without-Padding.svg');
+
+    &-white {
+        background-image: url('../../../assets/logo/Logo-White-Text-Without-Padding.svg');
+    }
+}
+
+.dt-logo-white {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-width: rems(130);
+    min-height: rems(32);
+    background-image: url('../../../assets/logo/Logo-White-Text-Without-Padding.svg');
+}
+
+.dt-logo-group {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-width: rems(142);
+    min-height: rems(20);
+    background-image: url('../../../assets/logo/dg-logo-group.svg');
+}

@@ -1,0 +1,81 @@
+@import '../../functions/functions';
+
+$tooltip-border-color: theme-color('gray-300');
+
+.tooltip {
+    filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.12));
+
+    &.show {
+        opacity: 1;
+    }
+    .arrow {
+        width: rems(11.32);
+        height: rems(11.32);
+    }
+}
+
+.bs-tooltip-top {
+    .arrow {
+        bottom: 1px;
+        border-bottom: 1px solid $tooltip-border-color;
+        border-right: 1px solid $tooltip-border-color;
+        background: white;
+        transform: rotate(45deg);
+          &::before {
+            border-top-color: color('white');
+            border-width: unset;
+        }
+    }
+}
+  
+.bs-tooltip-right {
+    .arrow {
+        border-left: 1px solid $tooltip-border-color;
+        border-bottom: 1px solid $tooltip-border-color;
+        background: white;
+        transform: rotate(45deg);
+        left: 1px;
+          &::before {
+            border-right-color: color('white');
+            border-width: unset;
+        }
+    }
+}
+  
+.bs-tooltip-bottom {
+    .arrow {
+        top: 1px;
+        border-top: 1px solid $tooltip-border-color;
+        border-right: 1px solid $tooltip-border-color;
+        background: white;
+        transform: rotate(-45deg);
+        &::before {
+            border-bottom-color: color('white');
+            border-width: unset;
+        }
+    }
+}
+  
+.bs-tooltip-left {  
+    .arrow {
+        border-top: 1px solid $tooltip-border-color;
+        border-right: 1px solid $tooltip-border-color;
+        background: white;
+        transform: rotate(45deg);
+        right: 1px;
+          &::before {
+            border-left-color: color('white');
+            border-width: unset;
+        }
+    }
+}
+
+.tooltip-inner {
+    background-color: color('white');
+    border-radius: rems(3);
+    border: 1px solid theme-color('gray-300');
+    color: theme-color('gray');
+    padding: rems(12);
+    min-width: rems(144);
+    max-width: rems(320);
+}

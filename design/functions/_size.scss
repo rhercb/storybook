@@ -1,0 +1,13 @@
+@import '../overrides/variables';
+
+@function rems($pixels) {
+    @return (strip-unit($pixels) / $base-font-size) * 1rem;
+}
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}

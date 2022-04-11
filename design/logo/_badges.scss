@@ -1,0 +1,23 @@
+@import '../functions/functions';
+
+%badge-style {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-width: rems(121.5);
+    min-height: rems(36);
+}
+
+
+.dt-badge {
+    &-apple {
+        @extend %badge-style;
+        background-image: url('../../../assets/logo/App-Store.svg');
+    }
+
+    &-google {
+        @extend %badge-style;
+        background-image: url('../../../assets/logo/Google-Play.svg');
+    }
+}

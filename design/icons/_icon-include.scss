@@ -1,0 +1,58 @@
+@import 'variables';
+@import '../overrides/variables';
+@import '../functions/functions';
+
+[class^='dt-icon-'],
+[class*=' dt-icon-'] {
+    color: $dt-icon-default-color;
+
+    &:hover {
+        color: $dt-icon-hover-color;
+    }
+}
+
+.dt-icon {
+    &__size {
+        &--16 {
+            font-size: rems(16);
+        }
+
+        &--18 {
+            font-size: rems(18);
+        }
+
+        &--20 {
+            font-size: rems(20);
+        }
+
+        &--24 {
+            font-size: rems(24);
+        }
+
+        &--28 {
+            font-size: rems(28);
+        }
+
+        &--30 {
+            font-size: rems(30);
+        }
+
+        &--32 {
+            font-size: rems(32);
+        }
+
+        &--48 {
+            font-size: rems(48);
+        }
+    }
+}
+
+.btn:disabled,
+.btn.disabled {
+    [class^='dt-icon-'],
+    [class*=' dt-icon-'] {
+        &::before {
+            color: $dt-icon-disabled-color;
+        }
+    }
+}
