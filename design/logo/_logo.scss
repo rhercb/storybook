@@ -12,22 +12,22 @@
 .dt-logo {
     &-csv {
         @extend %logo-style;
-        background-image: url('../../../assets/logo/csv.svg');
+        background-image: url('../assets/logo/csv.svg');
     }
     &-slack {
         @extend %logo-style;
-        background-image: url('../../../assets/logo/Slack.svg');
+        background-image: url('../assets/logo/Slack.svg');
     }
     &-gmail {
         @extend %logo-style;
-        background-image: url('../../../assets/logo/Gmail.svg');
+        background-image: url('../assets/logo/Gmail.svg');
     }
     &-calendar {
         @extend %logo-style;
-        background-image: url('../../../assets/logo/Google-Calendar.svg');
+        background-image: url('../assets/logo/Google-Calendar.svg');
     }
     &-outlook {
         @extend %logo-style;
-        background-image: url('../../../assets/logo/Outlook.svg');
+        background-image: url('../assets/logo/Outlook.svg');
     }
 }

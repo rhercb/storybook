@@ -1,12 +1,12 @@
 // Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "../../../node_modules/bootstrap/scss/functions";
+@import "~bootstrap/scss/functions";
 // Required BS files
-@import "../../../node_modules/bootstrap/scss/variables";
-@import "../../../node_modules/bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
 // Include any optional Bootstrap components as you like
-@import "../../../node_modules/bootstrap/scss/buttons";
-@import "../../../node_modules/bootstrap/scss/navbar";
-@import "../../../node_modules/bootstrap/scss/nav";
-@import "../../../node_modules/bootstrap/scss/input-group";
-@import "../../../node_modules/bootstrap/scss/custom-forms";
-@import "../../../node_modules/bootstrap/scss/tooltip";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/tooltip";

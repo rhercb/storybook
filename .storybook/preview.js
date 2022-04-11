@@ -1,3 +1,4 @@
+import '../design/main.scss';
 import previewScreenSizes from "./custom/previewScreenSizes"
 
 export const parameters = {

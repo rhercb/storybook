@@ -13,11 +13,11 @@
 .dt-badge {
     &-apple {
         @extend %badge-style;
-        background-image: url('../../../assets/logo/App-Store.svg');
+        background-image: url('../assets/logo/App-Store.svg');
     }
 
     &-google {
         @extend %badge-style;
-        background-image: url('../../../assets/logo/Google-Play.svg');
+        background-image: url('../assets/logo/Google-Play.svg');
     }
 }

@@ -34,7 +34,12 @@ const config = {
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|ico|ai|eps|mp4|mp3|wav|woff|woff2|pdf|eot|ttf|otf|webmanifest|xml)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        exclude: [/node_modules/],
+        type: 'asset/resource'
+      },
     );
 
     return config;
