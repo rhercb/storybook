@@ -1,5 +1,6 @@
 import { Button } from './';
 import ButtonDocs from './ButtonDocs.mdx';
+import { withDesign } from 'storybook-addon-designs'
 
 export default {
   argTypes: {
@@ -37,7 +38,12 @@ export default {
     docs: {
       page: ButtonDocs,
     },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/FkXq8kXWv7HB4kU2YIL0XT/Guidelines?node-id=3863%3A16497',
+    },
   },
+  decorators: [withDesign],
 };
 
 const Template = ({ ...args }) => {
