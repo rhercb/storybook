@@ -2,13 +2,28 @@ const path = require('path');
 
 const config = {
   stories: [
-    "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.@(js|jsx|ts|tsx)"
+      {
+        // 👇 The directory field sets the directory your stories
+        directory: '../stories/components',
+        // 👇 The titlePrefix field will generate automatic titles for your stories
+        titlePrefix: 'Components',
+        // 👇 Storybook will load all files that contain the stories extensio
+        files: '**/*.stories.@(js|jsx|ts|tsx)',
+      },
+      {
+        // 👇 The directory field sets the directory your stories
+        directory: '../stories/utils',
+        // 👇 The titlePrefix field will generate automatic titles for your stories
+        titlePrefix: 'Utilities',
+        // 👇 Storybook will load all files that contain the stories extensio
+        files: '*.stories.mdx',
+      },
   ],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    '@storybook/addon-a11y',
+    "@storybook/addon-a11y",
+    // "storybook-addon-pseudo-states"
   ],
   framework: "@storybook/html",
   core: { 

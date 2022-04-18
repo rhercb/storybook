@@ -1,5 +1,6 @@
 import '../design/main.scss';
-import previewScreenSizes from "./custom/previewScreenSizes"
+import previewScreenSizes from "./custom/previewScreenSizes";
+import previevBackgrounds from './custom/previewBackground';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -14,4 +15,5 @@ export const parameters = {
       ...previewScreenSizes,
     },
   },
+  backgrounds: previevBackgrounds
 }
