@@ -1,11 +1,8 @@
 import { Button } from './';
 import ButtonDocs from './ButtonDocs.mdx';
 
-// More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-    // Assigns the argType to the Text category
     label: {
       table: {
         category: 'Text',
@@ -43,10 +40,7 @@ export default {
   },
 };
 
-// More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
 const Template = ({ ...args }) => {
-  // You can either use a function to create DOM elements or use a plain html string!
-  // return `<div>${label}</div>`;
   return Button({ ...args });
 };
 

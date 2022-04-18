@@ -1,4 +1,4 @@
-import '../../../design/overrides/components/_buttons.scss';
+import '@styles/overrides/components/_buttons.scss';
 
 export const Button = ({
   type = 'primary',

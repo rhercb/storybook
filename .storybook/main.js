@@ -56,6 +56,8 @@ const config = {
         type: 'asset/resource'
       },
     );
+    // Alias
+    config.resolve.alias['@styles'] = path.resolve(__dirname, '../design');
 
     return config;
   }
